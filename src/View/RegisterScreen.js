@@ -11,18 +11,12 @@ const RegisterScreen = ({ navigation }) => {
     const handleRegister = () => {
         if (email == "" || passWord == "") {
             ToastAndroid.show('Vui lòng không bỏ trống', ToastAndroid.SHORT);
-
             return;
         }
         if (passWord.length < 6) {
             ToastAndroid.show('Mật khẩu phải có hơn 6 kí tự', ToastAndroid.SHORT);
-
             return;
         }
-        // if (passWord !== rePassWord) {
-        //     Alert.alert('Mật khẩu không trùng khớp.');
-        //     return;
-        // }
         try {
             let obj_user = {
                 email: email,
@@ -40,13 +34,11 @@ const RegisterScreen = ({ navigation }) => {
                 body: JSON.stringify(obj_user)
             }).then(res => res.json())
                 .then(data => {
-
                     ToastAndroid.show('Đăng ký thành công', ToastAndroid.SHORT);
                     navigation.navigate('Login')
                 }).catch(error => console.log(error))
-
-
-
+            ToastAndroid.show('Đăng ký thành công', ToastAndroid.SHORT);
+            navigation.navigate('Login')
         } catch (error) {
             console.error('Lỗi đăng ký:', error);
         }
@@ -80,8 +72,8 @@ const RegisterScreen = ({ navigation }) => {
                                     isShow == true ? <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                                         <Text style={{ fontSize: 30, fontWeight: 'bold' }}>Nhập thông tin của bạn</Text>
                                     </View> : <View style={{ width: '80%' }}>
-                                        <Text style={{ fontSize: 25 }}>REGISTER FOR</Text>
-                                        <Text style={{ fontSize: 40 }}>Bee Studio</Text>
+                                        <Text style={{ fontSize: 25, fontWeight: '500' }}>REGISTER FOR</Text>
+                                        <Text style={{ fontSize: 40, fontWeight: 'bold', color: COLOR.mainStream }}>Bee Studio</Text>
                                     </View>
                                 }
                                 <TextInput

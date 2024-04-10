@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import {  Image, KeyboardAvoidingView, Platform, SafeAreaView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
+import { Image, KeyboardAvoidingView, Platform, SafeAreaView, StyleSheet, Text, TextInput, ToastAndroid, TouchableOpacity, View } from 'react-native';
 import COLOR from '../../controller/color';
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async () => {
+  const handleLogin = () => {
     try {
-      await fetch('https://beeserver-1.onrender.com/users/data')
+      fetch('https://beeserver-1.onrender.com/users/data')
         .then(res => res.json())
         .then(data => {
           console.log(data);
@@ -24,7 +24,7 @@ const LoginScreen = ({navigation}) => {
       console.error('Lỗi:', error);
     }
   };
-  const handleForgotPass=()=>{
+  const handleForgotPass = () => {
     navigation.navigate("forget")
   }
 
@@ -36,8 +36,8 @@ const LoginScreen = ({navigation}) => {
       >
         <View style={styles.hinhTron1} />
         <View style={styles.hinhTron2} />
-        <Text style={{ fontSize: 25 }}>WELCOME</Text>
-        <Text style={{ fontSize: 40, marginBottom: 10 }}>Bee Studio</Text>
+        <Text style={{ fontSize: 25, fontWeight: 600 }}>WELCOME</Text>
+        <Text style={{ fontSize: 40, color: COLOR.mainStream, fontWeight: "bold", marginBottom: 10 }}>Bee Studio</Text>
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.input}
@@ -78,7 +78,7 @@ const LoginScreen = ({navigation}) => {
       </KeyboardAvoidingView>
       <View style={styles.footer}>
         <Text>Don’t have an account?</Text>
-        <TouchableOpacity onPress={()=>{navigation.navigate('Register')}}>
+        <TouchableOpacity onPress={() => { navigation.navigate('Register') }}>
           <Text style={{ color: '#F7B2B7' }}> Register Now</Text>
         </TouchableOpacity>
       </View>
@@ -156,8 +156,8 @@ const styles = StyleSheet.create({
     top: -400,
     alignSelf: 'flex-end',
     left: -100
-},
-hinhTron2: {
+  },
+  hinhTron2: {
     height: 392,
     width: 392,
     opacity: 0.5,
@@ -166,7 +166,7 @@ hinhTron2: {
     position: 'absolute',
     top: -190,
     right: -200,
-},
+  },
   methodLogin: {
     flexDirection: 'row',
     marginTop: 10,

@@ -33,9 +33,9 @@ const NewsScreen = ({navigation}) => {
     ];
 
     const newsDetailsData = [
-        { id: 1, author: 'Kid', publishDate: 'Jan 4, 2023', title: 'Tổng hợp ảnh cưới đẹp xu hướng 2024', imageSource: require('../img/anh2.png') },
-        { id: 2, author: 'Kid', publishDate: 'Jan 4, 2023', title: 'Tổng hợp ảnh cưới đẹp xu hướng 2024', imageSource: require('../img/anh2.png') },
-        { id: 3, author: 'Kid', publishDate: 'Jan 4, 2023', title: 'Tổng hợp ảnh cưới đẹp xu hướng 2024', imageSource: require('../img/anh2.png') },
+        { id: 1, author: 'Tống doanh chính', publishDate: 'Jan 4, 2023', title: 'Trọn gói ngày cưới giá bao nhiêu? Chụp hình tiệc cưới 2024', imageSource: require('../img/anh2.png') },
+        { id: 2, author: 'Bee Studio', publishDate: 'Jan 4, 2023', title: 'Tổng hợp ảnh cưới đẹp xu hướng 2024', imageSource: require('../img/anh1_slide.jpg') },
+        { id: 3, author: 'Hải', publishDate: 'Jan 4, 2023', title: 'Tổng hợp ảnh cưới đẹp xu hướng 2024', imageSource: require('../img/anh2.png') },
     ];
 
     const renderItemTitle = ({ item }) => (

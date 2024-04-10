@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Slider from '../component/Slider';
 import { Dropdown } from 'react-native-element-dropdown';
 import { TextInput } from 'react-native-gesture-handler';
+import RegisterScreen from './RegisterScreen';
+import RegisterService from '../component/RegisterService';
 
 const heightWindow = Dimensions.get("screen").height;
 
@@ -14,7 +16,7 @@ const PhotoPrintScreen = () => {
     };
 
     const handleSignUp = () => {
-        
+
     };
 
     return (
@@ -23,36 +25,20 @@ const PhotoPrintScreen = () => {
                 <View style={styles.centerScreen}>
                     <Slider />
                 </View>
-                <View style={{paddingHorizontal:10}}>
+                <View style={{ paddingHorizontal: 10 }}>
                     <Text style={styles.optionTitle}>In ảnh</Text>
                     <Text style={styles.optionDescription}>Mô tả sản phẩm</Text>
                     <Text style={styles.optionDescription}>Tùy chọn</Text>
                     <View style={styles.dropdownContainer}>
                         <Text style={styles.dropdownLabel}>Kích thước</Text>
-                        <Dropdown
-                            style={styles.dropdown}
-                            data={[
-                                { label: 'Nhỏ', value: 'small' },
-                                { label: 'Trung bình', value: 'medium' },
-                                { label: 'Lớn', value: 'large' },
-                            ]}
-                            onSelect={(value) => handleSizeChange(value)}
-                        />
+                        <Text style = {styles.dropdown}>3.14</Text>
                     </View>
                     <View style={styles.dropdownContainer}>
                         <Text style={styles.dropdownLabel}>Loại giấy</Text>
-                        <Dropdown
-                            style={styles.dropdown}
-                            data={[
-                                { label: 'Nhỏ', value: 'small' },
-                                { label: 'Trung bình', value: 'medium' },
-                                { label: 'Lớn', value: 'large' },
-                            ]}
-                            onSelect={(value) => handleSizeChange(value)}
-                        />
+                        <Text style = {styles.dropdown}>Giấy thủ công</Text>
                     </View>
                     <View style={{ alignSelf: 'flex-end' }}>
-                        <Text style={styles.price}>176.000 Đ</Text>
+                        <Text style={styles.price}>0 Đ</Text>
                     </View>
                     <View style={styles.bottomContainer}>
                         <Text style={styles.promotionText}>
@@ -65,30 +51,11 @@ const PhotoPrintScreen = () => {
                         </TouchableOpacity>
                     </View>
                     <TouchableOpacity style={styles.themAnh}>
-                        <Image source={{ uri: "https://e7.pngegg.com/pngimages/50/218/png-clipart-black-and-white-icon-play-button-angle-white.png" }} style={{ height: 50, width: 50 }} />
+                        <Image source={{ uri: "https://ung-dung.com/images/upanh_online/upanh.png" }} style={{ height: 50, width: 50 }} />
+                        <Text>Chọn hình ảnh</Text>
                     </TouchableOpacity>
-                    <Text>Đăng ký liền tay - nhận ngay ưu đãi</Text>
-                    <View style={styles.form}>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Họ và tên"
-                            placeholderTextColor="#999"
-                            multiline
-                        />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Số điện thoại"
-                            placeholderTextColor="#999"
-                            multiline
-                        />
-                        <TextInput
-                            style={[styles.input, { paddingVertical: 30 }]}
-                            placeholder="Thông tin đăng ký"
-                            placeholderTextColor="#999"
-                        />
-                        <TouchableOpacity style={styles.signUpButton} onPress={handleSignUp}>
-                            <Text style={styles.signUpButtonText}>Đăng ký</Text>
-                        </TouchableOpacity>
+                    <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                        <RegisterService />
                     </View>
                 </View>
             </ScrollView>
@@ -129,6 +96,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     dropdown: {
+        padding : 10,
         width: '70%',
         elevation: 2,
         shadowColor: '#000',
@@ -162,6 +130,8 @@ const styles = StyleSheet.create({
     },
     themAnh: {
         width: "100%",
+        justifyContent: "center",
+        alignItems: 'center',
         backgroundColor: '#F7F8F9',
         height: heightWindow * 0.3,
         marginTop: 10

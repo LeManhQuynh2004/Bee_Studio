@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react'
 import {View, Text, Button, Modal, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -13,6 +13,11 @@ import RegisterScreen from './src/View/RegisterScreen';
 import ForgotPassScreen from './src/View/ForgotPassScreen';
 import SendOTPScreen from './src/View/SendOTPScreen';
 import CreatPassScreen from './src/View/CreatePassScreen';
+import ServiceScreen from './src/View/ServiceScreen';
+import Chitiet_dichvu from './src/View/Chitiet_dichvu';
+import Ao_cuoi from './src/View/Ao_cuoi';
+import Chitiet_aocuoi from './src/View/Chitiet_aocuoi';
+import VideoScreen from './src/View/VideoScreen';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -24,6 +29,9 @@ const MyDrawer = () => {
       <Drawer.Screen name="Liên hệ" component={ContactScreen} />
       <Drawer.Screen name="In ảnh" component={PhotoPrintScreen} />
       <Drawer.Screen name="Tin tức" component={NewsScreen} />
+      <Drawer.Screen name='Dịch vụ' component={ServiceScreen}/>
+      <Drawer.Screen name='Áo cưới' component={Ao_cuoi}/>
+      <Drawer.Screen name='Video' component={VideoScreen}/>
     </Drawer.Navigator>
   );
 };
@@ -39,6 +47,10 @@ function App() {
         <Stack.Screen name='send' component={SendOTPScreen}/>
         <Stack.Screen name='create' component={CreatPassScreen}/>
         <Stack.Screen name='details' component={NewDetailsScreen}/>
+        <Stack.Screen name='Chitiet_dichvu' component={Chitiet_dichvu}/>
+        <Stack.Screen name='Ao_cuoi' component={Ao_cuoi}/>
+        <Stack.Screen name='Chitiet_aocuoi' component={Chitiet_aocuoi}/>
+        <Stack.Screen name='Video' component={VideoScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
     // <LoginScreen />

@@ -5,8 +5,13 @@ const ContactScreen = () => {
   return (
     <KeyboardAvoidingView style={styles.container} behavior="padding">
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Text style={styles.title}>Contact Bee Studio</Text>
-        <Text style={styles.subtitle}>Any question or remarks? Just write us a message!</Text>
+        <View style={{ width: '100%', alignItems: 'center' }}>
+          <Text style={styles.title}>Contact Bee Studio</Text>
+          <Text>Any question or remarks?</Text>
+          <Text>
+            Just write us a message!
+          </Text>
+        </View>
         <View style={styles.contactInfoContainer}>
           <View style={styles.containerForm}>
             <Text style={styles.contactInfoTitle}>Contact Information</Text>
@@ -93,7 +98,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   contactInfoSubtitle: {
-    fontSize: 11  ,
+    fontSize: 11,
     marginBottom: 20,
     color: '#C9C9C9',
   },
@@ -109,7 +114,7 @@ const styles = StyleSheet.create({
   },
   contactText: {
     fontSize: 12,
-    color: '#FFFFFF', 
+    color: '#FFFFFF',
   },
   input: {
     borderWidth: 1,

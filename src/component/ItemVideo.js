@@ -16,7 +16,7 @@ const ItemVideo = ({ item }) => {
                 }}
                 source={
                     {
-                        uri: "https://aocuoimailisa.vn/wp-content/uploads/2023/02/3-64.jpg"
+                        uri: item.image
                     }
                 }
             >
@@ -29,7 +29,7 @@ const ItemVideo = ({ item }) => {
                 </TouchableOpacity>
             </ImageBackground>
             <View style={{ flexWrap: 'nowrap', padding: 10 }}>
-                <Text style={{ textAlign: 'center', color: COLOR.mainStream, fontSize: FONT_SIZE.font_size_16, fontWeight: '600' }}>Bộ ảnh cưới phim trường L’AMOUR của dâu rể Quốc Bảo – Huyền Lam</Text>
+                <Text style={{ textAlign: 'center', color: COLOR.mainStream, fontSize: FONT_SIZE.font_size_16, fontWeight: '600' }}>{item.name}</Text>
             </View>
         </View>
     )

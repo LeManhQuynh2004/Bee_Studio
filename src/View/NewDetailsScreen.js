@@ -6,7 +6,7 @@ const NewDetailsScreen = ({navigation}) => {
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={()=>navigation.goBack()}>
-                    <Image source={require('../img/notification.png')} style={styles.icon} />
+                    <Image source={require('../img/left-arrow.png')} style={styles.icon} />
                 </TouchableOpacity>
                 <TextInput
                     style={styles.searchInput}
@@ -21,7 +21,7 @@ const NewDetailsScreen = ({navigation}) => {
                 <Image source={require('../img/anh2.png')} style={styles.image} />
                 <View style={styles.detailsContainer}>
                     <View style={styles.info}>
-                        <Text style={styles.author}>By Kid</Text>
+                        <Text style={styles.author}>By Tống Doanh Chính</Text>
                         <Text style={styles.publishDate}>Jan 1, 2021</Text>
                     </View>
                     <Text style={styles.title}>

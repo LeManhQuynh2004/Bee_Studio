@@ -1,13 +1,13 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
 
-const ItemNewpaper = ({ imageSource,athor, title, publishTime }) => {
+const ItemNewpaper = ({ imageSource,author, title, publishTime }) => {
     return (
         <View style={styles.container}>
             <Image source={{uri:imageSource}} style={styles.image} />
             <Text style={styles.title}>{title}</Text>
             <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                <Text>By {athor}</Text>
+                <Text>By {author}</Text>
                 <Text style={styles.publishTime}>{publishTime}</Text>
             </View>
         </View>
